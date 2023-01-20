@@ -7,7 +7,7 @@ This is a web-based application that allows users to take online exams.
 
 ## Demo
 
-Insert gif or link to demo
+![](https://github.com/MinaYossry/Online-Examination-System/blob/master/Application%20Demo.gif)
 
 
 ## Run Locally
