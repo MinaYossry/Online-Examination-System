@@ -10,6 +10,9 @@ This repository contains the source code for an online examination system that u
 
 ## ERD and Mapping
 
+![](https://github.com/MinaYossry/Online-Examination-System/blob/master/ERD%20and%20Mapping/ERD.jpg)
+
+
 The online examination system utilizes a relational database management system, specifically Microsoft SQL Server, to store and retrieve data.
 
 The database is comprised of several tables that are linked together through relationships, as shown in the ERD diagram below.
@@ -48,7 +51,7 @@ Additionally, we have used the primary key-foreign key relationship to prevent i
 
 By using these techniques, we can ensure data consistency, minimize data redundancy, and improve the performance of the database.
 
-## Demo
+## Demo of Web Application
 
 ![](https://github.com/MinaYossry/Online-Examination-System/blob/master/Application%20Demo.gif)
 
