@@ -51,7 +51,7 @@ Additionally, we have used the primary key-foreign key relationship to prevent i
 
 By using these techniques, we can ensure data consistency, minimize data redundancy, and improve the performance of the database.
 
-## Demo
+## Demo of Web Application
 
 ![](https://github.com/MinaYossry/Online-Examination-System/blob/master/Application%20Demo.gif)
 
