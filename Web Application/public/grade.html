@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grades</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="bootstrap/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .card-header {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card m-3">
+        <div class="card-header">
+          <h1>Grades</h1>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Instructor Name</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody id="grades-table"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row justify-content-center m-3">
+        <button class="col-8 btn btn-primary" id="signout">Sign Out</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("signout").addEventListener("click", function () {
+        localStorage.clear;
+        fetch("/signout")
+          .then((res) => res.text())
+          .then((data) => {})
+          .catch((err) => {
+            console.log(err);
+          });
+        window.location.href = "/";
+      });
+      const grades = JSON.parse(localStorage.getItem("grades"));
+      const gradesTable = document.getElementById("grades-table");
+      let totalGrade = 0;
+      grades.forEach((grade) => {
+        const row = document.createElement("tr");
+        const courseId = document.createElement("td");
+        courseId.innerText = grade.Crs_ID;
+        const courseName = document.createElement("td");
+        courseName.innerText = grade.Cr_Name;
+        const instructorName = document.createElement("td");
+        instructorName.innerText = grade.Ins_Name;
+        const gradeValue = document.createElement("td");
+        gradeValue.innerText = grade.St_Grade.toFixed(2);
+        totalGrade += grade.St_Grade;
+        row.appendChild(courseId);
+        row.appendChild(courseName);
+        row.appendChild(instructorName);
+        row.appendChild(gradeValue);
+        gradesTable.appendChild(row);
+      });
+      const averageRow = document.createElement("tr");
+      const averageCol = document.createElement("td");
+      averageCol.innerText = "Average Grade: ";
+      const averageValue = document.createElement("td");
+      averageValue.innerText = (totalGrade / grades.length).toFixed(2);
+      averageCol.setAttribute("colspan", "3");
+      averageCol.setAttribute("style", "text-align:right;");
+      averageRow.appendChild(averageCol);
+      averageRow.appendChild(averageValue);
+      gradesTable.appendChild(averageRow);
+    </script>
+  </body>
+</html>
