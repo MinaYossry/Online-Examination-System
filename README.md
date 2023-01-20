@@ -15,7 +15,7 @@ Insert gif or link to demo
 Clone the repository to your local machine by running
 
 ```bash
-  git clone https://github.com/<username>/online-examination-system.git
+  git clone https://github.com/MinaYossry/Online-Examination-System.git
 ```
 
 Create a new SQL Server database and import the provided SQL file
@@ -24,7 +24,7 @@ Update the server.js file with your database credentials
 Go to the project directory
 
 ```bash
-  cd online-examination-system
+  cd Online-Examination-System
 ```
 
 Install dependencies
